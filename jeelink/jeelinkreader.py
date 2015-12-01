@@ -10,7 +10,7 @@ while 1:
     if ((data[0]=="OK") and (data[1]=="9")):
       sensor_node_address = data[2]
       battery = (int(data[3]) & 0x80) >> 7
-      type = (int(data[3]) & 0x70) >> 4
+      sensor_type = (int(data[3]) & 0x70) >> 4
       channel = (int(data[3]) & 0x0F)
       temperature = int(data[4])*256+int(data[5])-1000
       humidity = int(data[6]) & 0x7F
