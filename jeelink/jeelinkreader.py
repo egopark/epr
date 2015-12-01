@@ -1,7 +1,7 @@
 #!usr/bin/env python
 import serial, sys
 from datetime import datetime
-ser = serial.Serial('devttyUSB0', 57600)
+ser = serial.Serial('/dev/ttyUSB0', 57600)
 
 while 1:
   line = ser.readline()
