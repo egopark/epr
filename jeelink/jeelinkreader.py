@@ -15,3 +15,7 @@ while 1:
       temperature = int(data[4])*256+int(data[5])-1000
       humidity = int(data[6]) & 0x7F
       bat_low = (int(data[6]) & 0x80) >> 7
+      filename = "t_h_"+ str(sensor_node_address)+".log"
+      f = open(filename, 'a')
+      f.write((str(datetime.now()) + " " + str(temperature) + " " + str(humidity) +"\r\n"
+      f.close()
