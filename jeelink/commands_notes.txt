@@ -1,0 +1,1 @@
+grep -q "display_rotate" /boot/config.txt || echo "display_rotate=3" >> /boot/config.txt
