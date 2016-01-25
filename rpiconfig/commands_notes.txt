@@ -1,1 +1,12 @@
+#some commands to chang the config of a RPi.
+
+
+# append rotation of the display. source: https://www.raspberrypi.org/documentation/configuration/config-txt.md
+
 grep -q "display_rotate" /boot/config.txt || echo "display_rotate=3" >> /boot/config.txt
+
+# change the display_rotate
+....
+
+#change keyboard layout to german
+sed -i '/XKBLAYOUT="gb"/c \XKBLAYOUT="de"' /etc/default/keyboard
