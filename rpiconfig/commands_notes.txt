@@ -10,3 +10,6 @@ grep -q "display_rotate" /boot/config.txt || echo "display_rotate=3" >> /boot/co
 
 #change keyboard layout to german
 sed -i '/XKBLAYOUT="gb"/c \XKBLAYOUT="de"' /etc/default/keyboard
+
+# mac address
+cat /sys/class/net/eth0/address
