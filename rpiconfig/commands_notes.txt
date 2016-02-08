@@ -38,5 +38,9 @@ raspi-config --expand-rootfs
 sed -i '/XKBLAYOUT="gb"/c \XKBLAYOUT="de"' /etc/default/keyboard
 
 # step 3.5
+echo "@midori -e Fullscreen -a http://google.com" >> /etc/xdg/lxsession/LXDE/autostart 
+
+
+# step 3.6
 # install additional packages
 python-serial
