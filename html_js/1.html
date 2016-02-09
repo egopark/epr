@@ -1,11 +1,65 @@
 <html>
   <head>
+    <title>Test</title>
+    <script src="suncalc.js"></script>
+    <script language="JavaScript">
+      var pageTimeout = "600";
+      var pageTimeoutINT = 600;
+      var clockTimeout = 1000;
+      function updateTime() {
+        var now = new Date();
+        document.getElementById("clock1").innerHTML = now.toLocaleString();
+        if ( pageTimeoutINT <= 0)
+          {
+            window.location = "./2.html";
+          } else {
+            pageTimeoutINT = pageTimeoutINT - 1;
+            //document.getElementById("pageTimeout").innerHTML = pageTimeoutINT.toString();
+          }
+        setTimeout('updateTime()',clockTimeout);
+      }
+      document.onclick = myClickHandler;
+      
+      function myClickHandler() {
+        pageTimeoutINT = 600;
+      }
+      setTimeout('updateTime()',clockTimeout);
+    </script>
   </head>
   <body>
-    <p id ="clock1"></p>
+    <table border="0" width="100%">
+      <col width="10%">
+      <col width="80%">
+      <col width="10%">
+      <tr>
+        <th></th>
+        <th><a href="./m.html"><p id="clock1"></p></a></th>
+        <th ALIGN="RIGHT"><a href="./2.html">>></a></th>
+      </tr>
+      <tr>
+        <td></</td>
+        <td><p id="sunrise">y</p></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p id="sunset">y</p></td>
+        <td ></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><a href="http://www.windguru.cz/de/index.php?sc=244">windguru</a></td>
+        <td ></td>
+      </tr>
+    </table>
+    <p id="pageTimeout"></p>
   </body>
 </html>
 <script language="JavaScript">
+  //document.getElementById("pageTimeout").innerHTML = pageTimeoutINT.toString();
   var now = new Date();
   document.getElementById("clock1").innerHTML = now.toLocaleString();
+  var times = SunCalc.getTimes(new Date(), 54.08, 12.133);
+  document.getElementById("sunrise").innerHTML ="Sonnenaufgang: "   + times.sunrise.toLocaleString();
+  document.getElementById("sunset").innerHTML  ="Sonnenuntergang: " + times.sunset.toLocaleString();
 </script>
