@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Test</title>
+    <script language="JavaScript">
+      <!--
+      var imgArray = new Array("image.jpg", "image2.jpg" , "image3.jpg", "image.jpg");
+      var imgArrayindex = 0;
+      var pageTimeout = "600";
+      var clockTimeout = 1000;
+      var imgTimeout = 5000;
+      function updateTime() {
+        var now = new Date();
+        document.getElementById("clock1").innerHTML = now.toLocaleString();
+        setTimeout('updateTime()',clockTimeout);
+      }
+      setTimeout('updateTime()',clockTimeout);
+      document.onclick = myClickHandler;
+      function myClickHandler() {
+        window.location = "./1.html";
+        //alert("The document was clicked!");
+      }
+      //-->
+    </script>
+    <script type="text/javascript">
+      function changeImage() {
+          imgArrayindex = imgArrayindex+1;
+          if (imgArrayindex>=imgArray.length)
+            {
+              imgArrayindex=0;
+            }
+          document.getElementById("img").src=imgArray[imgArrayindex];
+          document.getElementById("p1").innerHTML = imgArrayindex;
+          setTimeout('changeImage()',imgTimeout);
+      }
+      setTimeout('changeImage()',imgTimeout);
+    </script>
+  </head>
+  <body>
+    <table border="0" width="100%">
+      <col width="10%">
+      <col width="80%">
+      <col width="10%">
+      <tr>
+        <th></th>
+        <th><p id="clock1"></p></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td></td>
+        <td><img id="img" SRC="image.jpg" ALT="some text" ></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p id="p1"></p></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
+<script language="JavaScript">
+      var now = new Date();
+      document.getElementById("clock1").innerHTML = now.toLocaleString();
+</script>
