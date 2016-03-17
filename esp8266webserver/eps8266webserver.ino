@@ -1,23 +1,15 @@
-#include <ESP8266WiFi.h>
-
-const char* ssid     = "ssid";
-const char* password = "password";
-
+#include "gpwifi.h"
 
 void setup() {
-  WiFi.begin(ssid, password);
-  
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
+  WiFiSetup();
+  InitWire();
 }
 
 void loop() {
-    if (WiFi.status() != WL_CONNECTED)
+  if (WiFiIsCONNECTED())
   {
-      WiFi.begin(ssid, password);
-      while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-      }
+    WiFiStart();
   }
+  WiFiHandleClient();
+  WireTransmission();
 }
