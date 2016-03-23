@@ -1,4 +1,5 @@
 #include "gpwifi.h"
+#include "gpwire.h"
 
 void setup() {
   WiFiSetup();
