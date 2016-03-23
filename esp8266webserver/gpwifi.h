@@ -7,6 +7,6 @@
   void WiFiStart( void );
   void WiFiSetup( void );
   boolean WiFiIsCONNECTED( void );
-  boolean WiFiHandleClient( void );
+  void WiFiHandleClient( void );
 
 #endif
