@@ -1,23 +1,14 @@
-#some commands to chang the config of a RPi.
+# some commands to chang the config of a RPi.
 # step 1
 # download IMG and write to SD card
 wget
-dd ...
-
-
+dd 
 # step 2 download script
-wget ....
-
-
-# step 3 mac address
+wget 
+# step 2.1 mac address
 cat /sys/class/net/eth0/address
-
-
-# step 3.1
+# step 2.2
 # IP adress due to mac address
-....
-
-
 # step 3.2
 # display rotation
 # append rotation of the display. source: https://www.raspberrypi.org/documentation/configuration/config-txt.md
