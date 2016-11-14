@@ -1,0 +1,24 @@
+set terminal svg size 400,400 enhanced fname 'arial'  fsize 10 butt solid
+set output 'tempverlauf.svg'
+
+set title 'Verlauf'
+set xlabel 'Time'
+set xdata time
+set timefmt "%y %m %d %H %M"
+set format x "%y.%m.%d %H:%M"
+
+set ylabel 'Temp'
+
+set y2label 'Hum'
+set y2range [0:100]
+set y2tics 0,10,100
+
+plot \ 
+  "2016_11_n0.log" using 1:4 title 'temp1' with lines \
+, "2016_11_n0.log" using 1:5 axes x1y2 title 'hum1' with lines \
+, "2016_11_n8.log" using 1:4 title 'temp2' with lines \
+, "2016_11_n8.log" using 1:5 axes x1y2 title 'hum2' with lines \
+, "2016_11_n16.log" using 1:4 title 'temp3' with lines \
+, "2016_11_n16.log" using 1:5 axes x1y2 title 'hum3' with lines \
+, "2016_11_n25.log" using 1:4 title 'temp4' with lines \
+, "2016_11_n25.log" using 1:5 axes x1y2 title 'hum4' with lines
