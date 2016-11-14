@@ -34,3 +34,5 @@ echo "@midori -e Fullscreen -a http://google.com" >> /etc/xdg/lxsession/LXDE/aut
 # step 3.6
 # install additional packages
 python-serial
+mc
+gnuplot
