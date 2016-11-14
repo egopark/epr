@@ -14,10 +14,12 @@ if os.path.exists(usbDevice):
         battery = (int(data[3]) & 0x80) >> 7
         sensor_type = (int(data[3]) & 0x70) >> 4
         channel = (int(data[3]) & 0x0F)
-        temperature = int(data[4])*256+int(data[5])-1000
+        temperature = (int(data[4])*256+int(data[5])-1000)/10
         humidity = int(data[6]) & 0x7F
+        if humidity == 106:
+          humidity = ""
         bat_low = (int(data[6]) & 0x80) >> 7
-        filename = "t_" +datetime.now().strftime("%y_%m_%d_n") + str(sensor_node_address)+".log"
+        filename = "t_" +datetime.now().strftime("%y_%m_n") + str(sensor_node_address)+".log"
         if os.path.exists(filename):
           mode = 'a'
           last_modified = datetime.fromtimestamp(os.stat(filename).st_mtime)
@@ -29,5 +31,5 @@ if os.path.exists(usbDevice):
           writeCondition = True
         if writeCondition:
           f = open(filename, mode)
-          f.write(str(datetime.now().strftime("%H %M")) + " " + str(temperature) + " " + str(humidity) +"\r\n")
+          f.write(str(datetime.now().strftime("%y-%m-%d %H:%M")) + " " + str(temperature) + " " + str(humidity) +"\r\n")
           f.close()
