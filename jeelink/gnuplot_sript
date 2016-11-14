@@ -4,8 +4,8 @@ set output 'tempverlauf.svg'
 set title 'Verlauf'
 set xlabel 'Time'
 set xdata time
-set timefmt "%y %m %d %H %M"
-set format x "%y.%m.%d %H:%M"
+set timefmt "%y-%m-%d %H:%M"
+set format x "%y-%m-%d %H:%M"
 
 set ylabel 'Temp'
 
@@ -14,11 +14,11 @@ set y2range [0:100]
 set y2tics 0,10,100
 
 plot \ 
-  "2016_11_n0.log" using 1:4 title 'temp1' with lines \
-, "2016_11_n0.log" using 1:5 axes x1y2 title 'hum1' with lines \
-, "2016_11_n8.log" using 1:4 title 'temp2' with lines \
-, "2016_11_n8.log" using 1:5 axes x1y2 title 'hum2' with lines \
-, "2016_11_n16.log" using 1:4 title 'temp3' with lines \
-, "2016_11_n16.log" using 1:5 axes x1y2 title 'hum3' with lines \
-, "2016_11_n25.log" using 1:4 title 'temp4' with lines \
-, "2016_11_n25.log" using 1:5 axes x1y2 title 'hum4' with lines
+  "2016_11_n0.log" using 1:3 title 'temp1' with lines \
+, "2016_11_n0.log" using 1:4 axes x1y2 title 'hum1' with lines \
+, "2016_11_n8.log" using 1:2 title 'temp2' with lines \
+, "2016_11_n8.log" using 1:4 axes x1y2 title 'hum2' with lines \
+, "2016_11_n16.log" using 1:3 title 'temp3' with lines \
+, "2016_11_n16.log" using 1:4 axes x1y2 title 'hum3' with lines \
+, "2016_11_n25.log" using 1:3 title 'temp4' with lines \
+, "2016_11_n25.log" using 1:4 axes x1y2 title 'hum4' with lines
